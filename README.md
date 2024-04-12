@@ -1,1 +1,1 @@
-# telemed
+# telemedicine platform
