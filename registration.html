@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form-box">
+        <h1 id="title">Registration</h1>
+        <form>
+            <div class="input-group">
+                <h3>Name<em>*</em></h3>
+                <div class="input-field">
+                    <input type="text" placeholder="Enter Full Name" required>
+                </div>
+                <h3>Address<em>*</em></h3>
+                <div class="input-field">
+                    <input type="address" placeholder="Enter address" required>
+                </div>
+                <h3>Mobile Number<em>*</em></h3>
+                <div class="input-field">
+                    <input type="text" placeholder="Enter Mobile Number with extension"required>
+                </div>
+                <div>
+                    <h3>Gender<em>*</em></h3>
+                    <label for="pink">Female</label>
+                        <input type="radio" id="pink" class="gender-input" name="gender" value="female">
+                        <label for="blue">Male</label>
+                        <input type="radio" id="blue" class="gender-input" name="gender" value="male" >
+                    
+                        <label for="green">Others</label>
+                        <input type="radio" id="green" class="gender-input" name="gender" value="others">
+                      
+                </div><br>
+                <div class="input-row">
+                    <input type="submit" name="send" value="Submit">
+                   
+                
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    let signupBtn=document.getElementById("signupBtn");
+    let signinBtn=document.getElementById("signinBtn");
+    let nameField=document.getElementById("nameField");
+    let title=document.getElementById("title");
+    let passwordField=document.getElementById("passwordField");
+
+    signinBtn.onclick=function(){
+        nameField.style.maxHeight="0";
+        passwordField.style.maxHeight="0";
+        title.innerHTML="Sign In";
+        signupBtn.classList.add("disable");
+        signinBtn.classList.remove("disable");
+
+
+    }
+    signupBtn.onclick=function(){
+        nameField.style.maxHeight="60px";
+        passwordField.style.maxHeight="60px";
+        title.innerHTML="Sign Up";
+        signupBtn.classList.remove("disable");
+        signinBtn.classList.add("disable");
+
+
+    }
+</script>
+</body>
+</html>
