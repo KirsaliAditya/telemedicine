@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Profile.css';
-import defaultPhoto from '../Assets/pro.jpg'; 
-import icon1 from '../Assets/vc-icon.png';
-import icon2 from '../Assets/list-icon.png';
+import defaultPhoto from 'pro.jpg'; 
+import icon1 from 'vc-icon.png';
+import icon2 from 'list-icon.png';
 
 export const Profile = () => {
   const handleClick = (iconName) => {
