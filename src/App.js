@@ -1,25 +1,50 @@
 import './App.css';
 import NavBar from './Components/NavBar';
-import backgroundImage from './Background.jpeg'; // Import the image
-import Features from './Components/Features';
+import backgroundImage from './Background.jpeg'; 
+import Home from './Components/Home';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignUp from './Components/Signup';
+import SignIn from './Components/Signin';
+import About from './Components/About';
+import Services from './Components/Services';
+import Contact from './Components/Contact';
+import { useState } from 'react';
+import Alert from './Components/Alert';
+
 
 function App() {
+  const [alert,setAlert]=useState(null)
+  const showAlert=(message,type)=>
+  {
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  }
   return (
     <>
-      <NavBar/>
-      <style>{`
+    <style>{`
           body {
             background-image: url(${backgroundImage});
           }
         `}</style>
+    <Router>
+      <NavBar/>
+      <Alert alert={alert}/>
         <div className="container">
-          <Features/>
+          <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/about" element={<About/>}/>
+          <Route exact path="/services" element={<Services/>}/>
+          <Route exact path="/contact" element={<Contact/>}/>
+          <Route exact path="/signin" element={<SignIn showAlert={showAlert}/>}/>
+          <Route exact path="/signup" element={<SignUp showAlert={showAlert}/>}/>
+          </Routes>
         </div>
-        <button type="button" className="btn btn-primary" style={{marginLeft:"200px",marginTop:"40px",marginBottom:"20px"}}>Get Started</button>
-        <button type="button" className="btn btn-primary" style={{marginLeft:"800px",marginTop:"40px",marginBottom:"20px"}}>Book Appointment</button>
-        {/*<div className="container" style={{marginTop:"150px"}}>
-        <Login/>
-        </div>*/}
+      </Router>
     </>  
   );
 }

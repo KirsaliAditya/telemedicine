@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
@@ -15,9 +15,9 @@ const NavBar = () => {
         }}
       >
         <div className="container-fluid">
-          <a
+          <Link
             className="navbar-brand"
-            href="/"
+            to="/"
             style={{
               color: "white",
               fontFamily: "Times New Roman",
@@ -26,76 +26,54 @@ const NavBar = () => {
             }}
           >
             TeleMedicine
-          </a>
+          </Link>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{ marginLeft: "20px" }}>
               {/* Adjust the margin-left value to add space */}
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active"
                   aria-current="page"
-                  href="/"
+                  to="/"
                   style={{ color: "black" }}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item" style={{ marginLeft: "20px" }}>
                 {/* Add margin-left to create space */}
-                <a className="nav-link" href="/" style={{ color: "black" }}>
+                <Link className="nav-link" to="/about" style={{ color: "black" }}>
                   About Us
-                </a>
+                </Link>
               </li>
-              <li className="nav-item dropdown" style={{ marginLeft: "20px" }}>
+              <li className="nav-item " style={{ marginLeft: "20px" }}>
                 {/* Add margin-left to create space */}
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="/"
-                  role="button"
-                  data-bs-toggle="dropdown"
+                <Link
+                  className="nav-link"
+                  to="/services"
                   aria-expanded="false"
                   style={{ color: "black" }}
                 >
                   Services
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
+                </Link>
               </li>
               <li className="nav-item" style={{ marginLeft: "20px" }}>
                 {/* Add margin-left to create space */}
-                <a className="nav-link" href="/" style={{ color: "black" }}>
+                <Link className="nav-link" to="/contact" style={{ color: "black" }}>
                   Contact
-                </a>
+                </Link>
               </li>
               <li className="nav-item" style={{ marginLeft: "20px" }}>
                 {/* Add margin-left to create space */}
-                <a className="nav-link" href="/" style={{ color: "black" }}>
+                <Link className="nav-link" to="/signin" style={{ color: "black" }}>
                   Sign In
-                </a>
+                </Link>
               </li>
               <li className="nav-item" style={{ marginLeft: "20px" }}>
                 {/* Add margin-left to create space */}
-                <a className="nav-link" href="/" style={{ color: "black" }}>
+                <Link className="nav-link" to="/signup" style={{ color: "black" }}>
                   Sign Up
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
